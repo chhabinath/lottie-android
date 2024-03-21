@@ -50,6 +50,44 @@ dependencies {
   implementation 'com.airbnb.android:lottie:$lottieVersion'
 }
 ```
+Gradle is the only supported build configuration, so just add the dependency to your project `build.gradle` file:
+Add the Lottie library to the modules build gradle file. You will need to define the library in the `libs.versions.toml` file
+
+```
+[versions]
+...
+lottie = "$lottieVersion"
+
+[libraries]
+...
+lottie ={ group = "com.airbnb.android", name = "lottie", version.ref = "lottie"}
+...
+
+[plugins]
+...
+
+```
+
+now in `build.gradle.kts`
+
+```
+dependencies {
+...
+    implementation(libs.lottie)
+...
+}
+```
+
+or in `build.gradle`
+
+```
+dependencies {
+...
+    implementation libs.lottie
+...
+}
+```
+
 
 The latest Lottie version is:
 ![lottieVersion](https://maven-badges.herokuapp.com/maven-central/com.airbnb.android/lottie/badge.svg)
